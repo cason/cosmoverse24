@@ -1,0 +1,8 @@
+# Simple network setup:
+# - 4 validators: minimal BFT setup, tolerates 1 failure
+# - uniform voting power: every validator has voting power = 100
+
+[node.validator00]
+[node.validator01]
+[node.validator02]
+[node.validator03]
