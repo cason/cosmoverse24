@@ -1,0 +1,14 @@
+# Simple network setup:
+# - 4 validators: minimal BFT setup, tolerates 1 failure
+# - uniform voting power: every validator has voting power = 100
+
+# General configs that apply to all nodes.
+# Longer timeout_commit => longer blocks.
+config = [ 
+	"consensus.timeout_commit = 3s",
+]
+
+[node.validator00]
+[node.validator01]
+[node.validator02]
+[node.validator03]

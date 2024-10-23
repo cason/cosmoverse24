@@ -1,0 +1,27 @@
+# Simple network setup:
+# - 4 validators: minimal BFT setup, tolerates 1 failure
+# - voting power is defined in the [validator_update.*] sections
+
+# General configs that apply to all nodes.
+# Longer timeout_commit => longer blocks.
+config = [ 
+	"consensus.timeout_commit = 3s",
+]
+
+[node.validator00]
+[node.validator01]
+[node.validator02]
+[node.validator03]
+	# Node's clock is in the "future"
+	# Running 'cleanup' is required to achieve this.
+	clock_skew = "10s"
+
+# Validators' voting powers from height 0 (genesis)
+# Total voting power = 300.
+# We need more than 2/3 of it to be live, namely > 200.
+# So at least validator03 and validator03 must be alive.
+[validator_update.0]
+	validator00 = 50
+	validator01 = 50
+	validator02 = 100
+	validator03 = 100
