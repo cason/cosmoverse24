@@ -7,7 +7,7 @@ These are instructions for the hands-on part of the Workshop.
 1. [Docker](https://www.docker.com/)
 2. [Go](https://go.dev/), version `>= 1.23.1`
 4. General development tools, such as `make` etc.
-3. [CometBFT](github.com/cometbft/cometbft/) repository, from which we are using the `cason/cosmoverse24` branch
+3. [CometBFT](https://github.com/cometbft/cometbft/) repository, from which we are using the `cason/cosmoverse24` branch
 
 
 ## Setup
