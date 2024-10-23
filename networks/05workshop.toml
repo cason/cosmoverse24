@@ -1,0 +1,31 @@
+# Simple network setup:
+# - 4 validators: minimal BFT setup, tolerates 1 failure
+# - voting power is defined in the [validator_update.*] sections
+
+# General configs that apply to all nodes.
+# Longer timeout_commit => longer blocks.
+config = [ 
+	"consensus.timeout_commit = 3s",
+]
+
+# Enable PBTS from the genesis (i.e., first height)
+# Notice that pbts_enable_height = 0 (default) disables PBTS.
+pbts_enable_height = 1
+
+[node.validator00]
+[node.validator01]
+[node.validator02]
+[node.validator03]
+	# Node's clock is in the "future"
+	# Running 'cleanup' is required to achieve this.
+	clock_skew = "10s"
+
+# Validators' voting powers from height 0 (genesis)
+# Total voting power = 300.
+# We need more than 2/3 of it to be live, namely > 200.
+# With this distribution we can tolerate the failure of validator02.
+[validator_update.0]
+	validator00 = 50
+	validator01 = 50
+	validator02 = 98
+	validator03 = 102
